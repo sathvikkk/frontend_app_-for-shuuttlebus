@@ -4,14 +4,17 @@ This application is for creating a front end application for adding the passenge
 
 I have used the HTML and python flask for creating with database connection.
 
-for Html file  --  i have added in the template folder.
+for Html file  --  I have added in the template folder.
     add.html -- used the form tag to add the passsenger details.
 
 for python file -- I have used the flask framework.
     app.py -- added the mysql config details  in this file
 
+for database connection --  I have used flask mysql.
+
 packages need to install:
 
         pip install flask
-        pip install flask_mysqldb
+        pip install flask-mysql 
+        <!-- pip install flask_mysqldb -->
  
