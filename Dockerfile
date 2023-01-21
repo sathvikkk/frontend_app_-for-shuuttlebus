@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install flask
-RUN pip install flask_mysqldb
+RUN pip install flask-mysql
 
 EXPOSE 5000
 
