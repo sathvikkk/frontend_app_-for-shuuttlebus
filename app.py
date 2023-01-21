@@ -1,12 +1,20 @@
+import pymysql
 from flask import Flask, render_template, request
-from flask_mysqldb import MySQL
- 
+# from flask_mysqldb import MySQL
+from flaskext.mysql import MySQL
+
 app = Flask(__name__)
  
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'S@thvikkk2022'
-app.config['MYSQL_DB'] = 'shuttlebus'
-app.config['MYSQL_HOST'] = 'localhost'
+# app.config['MYSQL_USER'] = 'root'
+# app.config['MYSQL_PASSWORD'] = 'S@thvikkk2022'
+# app.config['MYSQL_DB'] = 'shuttlebus'
+# app.config['MYSQL_HOST'] = 'localhost'
+
+# mysql = MySQL(app)
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'S@thvikkk2022'
+app.config['MYSQL_DATABASE_DB'] = 'shuttlebus'
+app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
 
 mysql = MySQL(app)
  
@@ -23,9 +31,10 @@ def add():
         passengername = request.form['passengername']
         phonenumber = request.form['phonenumber']
         cityname = request.form['cityname']
-        cursor = mysql.connection.cursor()
+        conn = mysql.connect()
+        cursor = conn.cursor()
         cursor.execute(''' INSERT INTO passengersinfo VALUES(%s,%s,%s)''',(passengername,phonenumber,cityname))
-        mysql.connection.commit()
+        conn.commit()
         cursor.close()
         return "passenger details added."
  
