@@ -18,3 +18,4 @@ packages need to install:
         pip install flask-mysql 
         <!-- pip install flask_mysqldb -->
  
+ run with--- python app.py
