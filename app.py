@@ -18,6 +18,8 @@ app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
 
 mysql = MySQL(app)
  
+ #for html page
+ 
 @app.route('/')
 def form():
     return render_template('add.html')
