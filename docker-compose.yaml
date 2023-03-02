@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  frontend:
+    image: sathvikkk13/frontend 
+    ports:
+      - "5000:5000"
+    networks:
+      - communicate
+  
+  backend:
+    image: sathvikkk13/backend
+    ports:
+      - "8082:8082"
+    networks:
+      - communicate
+
+networks:
+  communicate:
+    driver: overlay
