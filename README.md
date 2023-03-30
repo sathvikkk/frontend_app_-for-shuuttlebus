@@ -14,8 +14,10 @@ For database connection --  I have used flask mysql.
 
 packages need to install:
 
+sudo apt install python3-pip
+
         pip install flask
         pip install flask-mysql 
         <!-- pip install flask_mysqldb -->
  
- Run the Application using --- python app.py
+ Run the Application using --- python3 app.py
