@@ -20,4 +20,6 @@ sudo apt install python3-pip
         pip install flask-mysql 
         <!-- pip install flask_mysqldb -->
  
- Run the Application using --- python3 app.py
+ Run the Application using ---
+    
+        python3 app.py
